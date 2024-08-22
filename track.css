@@ -1,9 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
 }
 
 #filter-form {
     margin-bottom: 20px;
+}
+
+#filter-form .form-label {
+    font-weight: 500;
 }
 
 #filter-form label {
@@ -18,18 +32,51 @@ body {
 #alumni-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 }
 
 .alumnus {
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 16px;
     margin: 8px;
     width: calc(33% - 16px);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.alumnus:hover {
+    transform: scale(1.02);
 }
 
 .alumnus img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.alumnus h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.alumnus p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.alumnus a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.alumnus a:hover {
+    text-decoration: underline;
 }
