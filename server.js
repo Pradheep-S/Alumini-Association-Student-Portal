@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const port = 3000; // You can change this port number
+const port = 3000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
 mongoose.connect('mongodb://localhost:27017/mentorship', {
@@ -24,22 +24,30 @@ db.once('open', () => {
 
 // Schema and Model
 const sessionSchema = new mongoose.Schema({
-    menteeName: String,
-    sessionDate: Date,
-    sessionTime: String,
+    menteeName: { type: String, required: true },
+    sessionDate: { type: Date, required: true },
+    sessionTime: { type: String, required: true },
     additionalInfo: String,
-    mentorId: String
+    mentorId: { type: String, required: true }
 });
 
 const Session = mongoose.model('Session', sessionSchema);
 
 // Route to handle form submission
-app.post('/schedule-session', async(req, res) => {
+app.post('/schedule-session', async (req, res) => {
+    console.log('Received data:', req.body);
+
     const { menteeName, sessionDate, sessionTime, additionalInfo, mentorId } = req.body;
+
+    // Ensure that sessionDate is correctly parsed
+    const parsedDate = new Date(sessionDate);
+    if (isNaN(parsedDate)) {
+        return res.status(400).send('Invalid date format');
+    }
 
     const newSession = new Session({
         menteeName,
-        sessionDate,
+        sessionDate: parsedDate,
         sessionTime,
         additionalInfo,
         mentorId
@@ -49,7 +57,7 @@ app.post('/schedule-session', async(req, res) => {
         await newSession.save();
         res.status(201).send('Session scheduled successfully');
     } catch (error) {
-        console.error('Error scheduling session:', error); // Log error for debugging
+        console.error('Error scheduling session:', error);
         res.status(500).send('Error scheduling session');
     }
 });
