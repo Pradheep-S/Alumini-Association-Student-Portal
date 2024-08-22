@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Association</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="storIES.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .card-text strong {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Alumni Association</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="alumni.html">Top Alumni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mentorship.html">Mentorship</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="offers.html">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="track.html">Track</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stories.html">Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announce.html">Announcements</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Alumni Success Stories</h1>
+        <div class="row" id="success-stories">
+            <!-- Success stories cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const successStories = [{
+            image: 'https://t4.ftcdn.net/jpg/03/25/73/59/360_F_325735908_TkxHU7okor9CTWHBhkGfdRumONWfIDEb.jpg', // Placeholder, replace with the actual image path or URL
+            title: 'Innovative Tech Startup',
+            alumnus: 'Rajesh Kumar',
+            graduationYear: '2010',
+            description: 'Rajesh founded a tech startup that developed a groundbreaking AI-based platform, now used by major companies worldwide.'
+        }, {
+            image: 'https://t4.ftcdn.net/jpg/07/53/13/29/360_F_753132969_4YLjWbUgKHxBXyKBQIhYgkAaqbXyUGe2.jpg', // Placeholder, replace with the actual image path or URL
+
+            title: 'Breakthrough Research in Biotechnology',
+            alumnus: 'Kavita Jain',
+            graduationYear: '2021',
+            description: 'Kavita contributed to cutting-edge research in biotechnology that led to significant advancements in medical treatments.'
+        }, {
+            image: 'https://cdn.create.vista.com/api/media/small/189858188/stock-photo-smiling-businesswoman', // Placeholder, replace with the actual image path or URL
+            title: 'Successful Financial Planning',
+            alumnus: 'Ravi Patel',
+            graduationYear: '2015',
+            description: 'Ravi assisted clients in financial planning, leading to substantial cost savings and optimized investment strategies.'
+        }, {
+            image: 'https://t4.ftcdn.net/jpg/01/56/19/15/360_F_156191504_F8KusEJnAdRbyztflKKtQnnU43GIyWv4.jpg', // Placeholder, replace with the actual image path or URL
+            title: 'Pioneering Environmental Conservation',
+            alumnus: 'Anjali Menon',
+            graduationYear: '2012',
+            description: 'Anjali launched a successful environmental conservation project that is now a model for sustainable practices worldwide.'
+        }, {
+            image: '150x150', // Placeholder, replace with the actual image path or URL
+            title: 'Revolutionary Education Platform',
+            alumnus: 'Mohan Das',
+            graduationYear: '2008',
+            description: 'Mohan developed an online education platform that has transformed how students access learning resources globally.'
+        }, {
+            image: '150x150', // Placeholder, replace with the actual image path or URL
+            title: 'Leading Healthcare Innovations',
+            alumnus: 'Sakshi Verma',
+            graduationYear: '2016',
+            description: 'Sakshi has been at the forefront of healthcare innovations, improving patient care and treatment outcomes.'
+        }, {
+            image: '150x150', // Placeholder, replace with the actual image path or URL
+            title: 'Groundbreaking AI Research',
+            alumnus: 'Vikas Sharma',
+            graduationYear: '2013',
+            description: 'Vikas\'s research in AI has led to major breakthroughs in machine learning and robotics, influencing the tech industry.'
+        }, {
+            image: '150x150', // Placeholder, replace with the actual image path or URL
+            title: 'Successful Entrepreneur',
+            alumnus: 'Neha Gupta',
+            graduationYear: '2011',
+            description: 'Neha founded a successful e-commerce business that is now a leader in the industry, known for innovation and customer service.'
+        }, {
+            image: '150x150', // Placeholder, replace with the actual image path or URL
+            title: 'Advancements in Renewable Energy',
+            alumnus: 'Arun Bhatt',
+            graduationYear: '2014',
+            description: 'Arun has been instrumental in developing new technologies for renewable energy, making significant contributions to the field.'
+        }, {
+            image: '150x150', // Placeholder, replace with the actual image path or URL
+            title: 'Top Cybersecurity Expert',
+            alumnus: 'Priya Nair',
+            graduationYear: '2017',
+            description: 'Priya is recognized as a top cybersecurity expert, helping organizations protect their digital assets against sophisticated threats.'
+        }];
+
+        const successStoriesContainer = document.getElementById('success-stories');
+
+        successStories.forEach(story => {
+            const storyCard = `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="${story.image}" class="card-img-top" alt="${story.title}" style="height: 150px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">${story.title}</h5>
+                            <p class="card-text flex-grow-1">
+                                <strong>Alumnus:</strong> ${story.alumnus}<br>
+                                <strong>Graduation Year:</strong> ${story.graduationYear}<br>
+                                <strong>Description:</strong> ${story.description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            successStoriesContainer.innerHTML += storyCard;
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#filter-form {
+    margin-bottom: 20px;
+}
+
+#filter-form label {
+    display: block;
+    margin: 5px 0;
+}
+
+#filter-form input {
+    margin-bottom: 10px;
+}
+
+#alumni-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.alumnus {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    width: calc(33% - 16px);
+}
+
+.alumnus img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}

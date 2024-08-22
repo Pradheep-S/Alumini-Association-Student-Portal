@@ -1,0 +1,50 @@
+/* styles.css */
+
+
+/* Existing CSS styles */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    /* Add relative positioning for the button */
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+.profile-actions {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+
+/* Optional styles for the button if you need to adjust its position */
+
+.profile-card .profile-actions {
+    display: flex;
+    justify-content: flex-end;
+}
