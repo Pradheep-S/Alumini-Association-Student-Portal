@@ -1,109 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Association</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <title>Alumni Platform Navigation</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+    .container {
+        padding: 20px;
+    }
+
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table th, table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+
+    table th {
+        background-color: #3f3f3f;
+        color: white;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+
+    /* Responsive Table Styles */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Adds smooth scrolling on iOS devices */
+    }
+
+    /* Search Container Styles */
+    .search-container {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .search-group {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .search-bar {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding does not affect the width */
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .search-container {
+            flex-direction: column;
+        }
+
+        .search-group {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Alumni Association</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="alumni.html">Top Alumni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mentorship.html">Mentorship</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="offers.html">Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="track.html">Track</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="stories.html">Stories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="announce.html">Announcements</a>
-                    </li>
-                </ul>
+
+    <!-- Custom Navbar -->
+    <custom-navbar></custom-navbar>
+    <div style="margin-top: 65px;"></div>
+    <div class="container my-5">
+        <!-- Alumni Tracking Form -->
+        <form id="alumniTrackingForm" class="alumni-form">
+            <!-- Form Fields (same as before) -->
+        </form>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-group">
+                <label class="search-label" for="search-name">Search by Name</label>
+                <input type="text" id="search-name" class="search-bar" placeholder="Enter name...">
+            </div>
+            <div class="search-group">
+                <label class="search-label" for="search-graduation-year">Search by Graduation Year</label>
+                <input type="number" id="search-graduation-year" class="search-bar" placeholder="Enter graduation year...">
+            </div>
+            <div class="search-group">
+                <label class="search-label" for="search-domain">Search by Domain</label>
+                <input type="text" id="search-domain" class="search-bar" placeholder="Enter domain...">
+            </div>
+            <div class="search-group">
+                <label class="search-label" for="search-location">Search by Location</label>
+                <input type="text" id="search-location" class="search-bar" placeholder="Enter location...">
             </div>
         </div>
-    </nav>
-
-    <div class="container my-5">
-        <h1 class="mb-4 text-center">Alumni Directory</h1>
 
         <!-- Alumni Table -->
-        <table id="alumniTable" class="display nowrap" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Photo</th>
-                    <th>Name</th>
-                    <th>Graduation Year</th>
-                    <th>Domain</th>
-                    <th>Location</th>
-                    <th>Contact</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data will be dynamically inserted here -->
-            </tbody>
-        </table>
+        <h2>Alumni List</h2>
+        <div class="table-wrapper">
+            <table id="alumni-table">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>Graduation Year</th>
+                        <th>Domain</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <!-- DataTables JS -->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('#alumniTable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "ajax": {
-                    "url": "/alumni",
-                    "type": "POST"
-                },
-                "columns": [
-                    {
-                        "data": "photo",
-                        "render": function (data, type, row) {
-                            return `<img src="${data}" class="img-fluid rounded-circle" width="50" alt="${row.name}">`;
-                        }
-                    },
-                    { "data": "name" },
-                    { "data": "graduationYear" },
-                    { "data": "domain" },
-                    { "data": "location" },
-                    {
-                        "data": "contact.email",
-                        "render": function (data, type, row) {
-                            return `<a href="mailto:${data}">${data}</a>`;
-                        }
-                    }
-                ]
+        $(document).ready(function () {
+            // Fetch alumni data and populate the table
+            fetch('http://localhost:5000/alumnis')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = $('#alumni-table tbody');
+                    data.forEach(alumnus => {
+                        const row = `
+                            <tr>
+                                <td><img src="${alumnus.photo}" alt="Photo" style="width: 100px; height: auto;"></td>
+                                <td>${alumnus.name}</td>
+                                <td>${alumnus.graduationYear}</td>
+                                <td>${alumnus.domain}</td>
+                                <td>${alumnus.location}</td>
+                            </tr>
+                        `;
+                        tableBody.append(row);
+                    });
+
+                    // Add search functionality
+                    $('#search-name, #search-graduation-year, #search-domain, #search-location').on('input', function () {
+                        const nameFilter = $('#search-name').val().toLowerCase();
+                        const graduationYearFilter = $('#search-graduation-year').val();
+                        const domainFilter = $('#search-domain').val().toLowerCase();
+                        const locationFilter = $('#search-location').val().toLowerCase();
+
+                        $('#alumni-table tbody tr').each(function () {
+                            const row = $(this);
+                            const name = row.find('td').eq(1).text().toLowerCase();
+                            const graduationYear = row.find('td').eq(2).text();
+                            const domain = row.find('td').eq(3).text().toLowerCase();
+                            const location = row.find('td').eq(4).text().toLowerCase();
+
+                            const matchesName = name.includes(nameFilter);
+                            const matchesGraduationYear = graduationYear.includes(graduationYearFilter);
+                            const matchesDomain = domain.includes(domainFilter);
+                            const matchesLocation = location.includes(locationFilter);
+
+                            if (matchesName && matchesGraduationYear && matchesDomain && matchesLocation) {
+                                row.show();
+                            } else {
+                                row.hide();
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error('Error fetching alumni:', error));
+
+            // Handle form submission
+            $('#alumniTrackingForm').on('submit', function (e) {
+                e.preventDefault();
+                alert('Form submitted!');
             });
         });
     </script>
+
+    <script src="navbar.js"></script> <!-- Link to your custom navbar script -->
 </body>
 
 </html>

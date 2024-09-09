@@ -1,67 +1,45 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
 const cors = require('cors');
-
 const app = express();
-const port = 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors()); // Enable CORS for all routes
 
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/mentorship', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+// MongoDB connection string
+const uri = "mongodb://localhost:27017/";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-    console.log('Connected to MongoDB');
-});
-
-// Schema and Model
-const sessionSchema = new mongoose.Schema({
-    menteeName: { type: String, required: true },
-    sessionDate: { type: Date, required: true },
-    sessionTime: { type: String, required: true },
-    additionalInfo: String,
-    mentorId: { type: String, required: true }
-});
-
-const Session = mongoose.model('Session', sessionSchema);
-
-// Route to handle form submission
-app.post('/schedule-session', async (req, res) => {
-    console.log('Received data:', req.body);
-
-    const { menteeName, sessionDate, sessionTime, additionalInfo, mentorId } = req.body;
-
-    // Ensure that sessionDate is correctly parsed
-    const parsedDate = new Date(sessionDate);
-    if (isNaN(parsedDate)) {
-        return res.status(400).send('Invalid date format');
-    }
-
-    const newSession = new Session({
-        menteeName,
-        sessionDate: parsedDate,
-        sessionTime,
-        additionalInfo,
-        mentorId
-    });
-
+// Fetch offers data from MongoDB
+app.get('/offers', async (req, res) => {
     try {
-        await newSession.save();
-        res.status(201).send('Session scheduled successfully');
+        await client.connect();
+        const database = client.db('offers');
+        const collection = database.collection('offers');
+        const offers = await collection.find({}).toArray();
+        res.json(offers);
     } catch (error) {
-        console.error('Error scheduling session:', error);
-        res.status(500).send('Error scheduling session');
+        console.error('Error fetching offers:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+// Fetch success stories from MongoDB
+app.get('/stories', async (req, res) => {
+    try {
+        await client.connect();
+        const database = client.db('alumni');
+        const collection = database.collection('stories');
+        const stories = await collection.find({}).toArray();
+        res.json(stories);
+    } catch (error) {
+        console.error('Error fetching stories:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// Serve static files (HTML, CSS, JS)
+app.use(express.static('public'));
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
 });

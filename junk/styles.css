@@ -1,0 +1,38 @@
+/* styles.css */
+
+/* Carousel image styling */
+.carousel-image {
+    opacity: 0.8;
+    /* Initial opacity */
+    transition: opacity 1s ease-in-out;
+    /* Smooth transition */
+}
+
+/* Carousel caption styling */
+.custom-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Opacity change on slide transition */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    transition: opacity 1s ease-in-out;
+    /* Smooth transition */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel-caption {
+        font-size: 1rem;
+    }
+}

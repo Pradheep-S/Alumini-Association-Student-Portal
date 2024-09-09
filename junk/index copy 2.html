@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Stories - Alumni Profiles</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      background: #d9eaff;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .grid-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+
+    .card {
+      padding: 10px;
+      background: rgb(229, 228, 252);
+      background: linear-gradient(38deg, rgba(229, 228, 252, 1), rgb(255 255 255) 51%);
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+      margin-bottom: 20px;
+    }
+
+    .card-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .card-bg-img img {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      border-radius: 10px;
+      animation: scaleAnim 10s ease-in-out infinite;
+    }
+
+    @keyframes scaleAnim {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.5) rotate(360deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    .card-bg-img {
+      filter: blur(50px);
+    }
+
+    .flex-row>div {
+      min-width: 180px;
+    }
+
+    .profile-img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .profile-img img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .social {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social li {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #832dff, #c7a);
+      border-radius: 3px;
+    }
+
+    .social li a {
+      color: #fff;
+    }
+
+    @media screen and (max-width: 1060px) and (min-width:900px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 899px) and (min-width:768px) {
+      .flex-row>div {
+        min-width: 150px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width: 767px) and (min-width:521px) {
+      .grid-row {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 520px) and (min-width:200px) {
+
+      .grid-row,
+      .flex-row {
+        display: block;
+      }
+
+      .card-bg-img img {
+        max-width: unset;
+      }
+
+      .card-info-inner {
+        display: block;
+        margin-top: 10px;
+      }
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      background: #d9eaff;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .grid-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 10px;
+      background: rgb(229, 228, 252);
+      background: linear-gradient(38deg, rgba(229, 228, 252, 1), rgb(255 255 255) 51%);
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+    }
+
+    .card-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .card-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card-info {
+      margin-top: 10px;
+    }
+
+    .card-info h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card-info p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .social {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .social li {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #832dff, #c7a);
+      border-radius: 3px;
+    }
+
+    .social li a {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="cards grid-row">
+      <div class="card flex-row colmun">
+        <div class="col-left card-image">
+          <div class="card-bg-img">
+            <img src="purple.jpg" alt="card background image">
+          </div>
+          <div class="profile-img">
+            <img src="profile.png" alt="profile">
+          </div>
+        </div>
+        <div class="col-right card-info">
+          <div class="card-info-inner">
+            <h2>Hello, I'm David Miller</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <ul class="social">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cards grid-row">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Innovative Tech Startup</h2>
+            <p>Rajesh Kumar (Graduated: 2010) founded a tech startup that developed a groundbreaking AI-based platform,
+              now used by major companies worldwide.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Breakthrough Research in Biotechnology</h2>
+            <p>Kavita Jain (Graduated: 2021) contributed to cutting-edge research in biotechnology that led to
+              significant
+              advancements in medical treatments.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Successful Financial Planning</h2>
+            <p>Ravi Patel (Graduated: 2015) assisted clients in financial planning, leading to substantial cost savings
+              and optimized investment strategies.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Pioneering Environmental Conservation</h2>
+            <p>Anjali Menon (Graduated: 2012) launched a successful environmental conservation project that is now a
+              model
+              for sustainable practices worldwide.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Revolutionary Education Platform</h2>
+            <p>Mohan Das (Graduated: 2008) developed an online education platform that has transformed how students
+              access
+              learning resources globally.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Leading Healthcare Innovations</h2>
+            <p>Sakshi Verma (Graduated: 2016) has been at the forefront of healthcare innovations, improving patient
+              care
+              and treatment outcomes.</p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Groundbreaking AI Research</h2>
+            <p>Vikas Sharma (Graduated: 2013) research in AI has led to major breakthroughs in machine learning and
+              robotics, influencing the tech industry.</p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Successful Entrepreneur</h2>
+            <p>Neha Gupta (Graduated: 2011) founded a successful e-commerce business that is now a leader in the
+              industry,
+              known for innovation and customer service.</p>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Advancements in Renewable Energy</h2>
+            <p>Arun Bhatt (Graduated: 2014) has been instrumental in developing new technologies for renewable energy,
+              making significant contributions to the field.</p>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Top Cybersecurity Expert</h2>
+            <p>Priya Nair (Graduated: 2017) is recognized as a top cybersecurity expert, helping organizations protect
+              their digital assets against sophisticated threats.</p>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Technology Innovator</h2>
+            <p>Sunil Mehta (Graduated: 2010) developed groundbreaking technology solutions that have transformed various
+              industries, including finance and healthcare.</p>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://via.placeholder.com/300x200" alt="Success Story Image">
+          </div>
+          <div class="card-info">
+            <h2>Creative Arts Leader</h2>
+            <p>Meera Desai (Graduated: 2015) has made significant contributions to the creative arts, winning numerous
+              awards and setting new standards in her field.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

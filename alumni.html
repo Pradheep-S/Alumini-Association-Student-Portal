@@ -4,172 +4,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Association</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .top-alumni-container {
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-        
-        .top-alumni-container h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-        
-        .alumni-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        
-        .alumni-card {
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-        
-        .alumni-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .alumni-info h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        .alumni-info p {
-            margin: 5px 0;
-            color: #555;
-        }
-    </style>
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="alumni.css">
+
+    <title>Top alumni</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Alumni Association</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="alumni.html">Top Alumni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mentorship.html">Mentorship</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="offers.html">Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="track.html">Track</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="stories.html">Stories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="announce.html">Announcements</a>
-                    </li>
-                </ul>
+<body> <custom-navbar></custom-navbar>
+
+    <section class="timeline">
+        <ul>
+            <li>
+                <div>
+                    <time>Alumni Connect</time> Connecting alumni with students, building a stronger future together.
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Alumni donations</time> Donations directly shapes a student’s future, providing them with
+                    the resources they need to succeed.
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Mentorship</time> Connect with a dedicated mentor to gain invaluable support and
+                    advice, and pave your path to success with the backing of experienced alumni.
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Track Success</time> Celebrate success—share and track alumni achievements to inspire and
+                    build
+                    pride in our community
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Feedback</time> Your voice matters—provide feedback and participate in surveys to help shape
+                    our association’s future.
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Access</time> Seamless access, anytime, anywhere—connect with the alumni community through our
+                    web and mobile apps.
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Updates</time> Stay informed and inspired—get updates on events, success stories, and career
+                    opportunities."
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Career</time> Advance your career—access job postings and opportunities tailored for our
+                    alumni network.
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <time>24/7 Chat S</time> Need help? Our chat support is here to assist you with any questions or
+                    issues
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Moments</time>Relive the memories—browse through our album of past alumni events and reunions
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>Join Us!</time> Reconnect and thrive—join our Alumni Association platform for seamless
+                    networking and engagement.
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    </footer>
+    <script src="navbar.js"></script> <!-- Link to your custom navbar script -->
+    <script src="alumni.js"></script>
+
+    <section class="container">
+        <div class="card__container swiper">
+            <div class="card__content">
+                <div class="swiper-wrapper">
+                    <article class="card__article swiper-slide">
+                        <div class="card__image">
+                            <img src="assets/img/Untitled-1.png" alt="image" class="card__img">
+                            <div class="card__shadow"></div>
+                        </div>
+
+                        <div class="card__data">
+                            <h3 class="card__name">Mr.V.Sadhasivam</h3>
+                            <p class="card__description">
+                                CHIEF ENGINEERING MANAGER at L&T Ltd., ECC Division
+                                CEG - ANNA UNIVERSITY</p>
+
+                            <a href="#" class="card__button">View More</a>
+                        </div>
+                    </article>
+
+                    <article class="card__article swiper-slide">
+                        <div class="card__image">
+                            <img src="assets/img/Untitled-2.png" alt="image" class="card__img">
+                            <div class="card__shadow"></div>
+                        </div>
+
+                        <div class="card__data">
+                            <h3 class="card__name">Aathithyan Somu</h3>
+                            <p class="card__description">
+                                Founder and CEO of Cookd Building the most loved consumer brand
+                            </p>
+
+                            <a href="#" class="card__button">View More</a>
+                        </div>
+                    </article>
+
+                    <article class="card__article swiper-slide">
+                        <div class="card__image">
+                            <img src="assets/img/Untitled-3.png" alt="image" class="card__img">
+                            <div class="card__shadow"></div>
+                        </div>
+
+                        <div class="card__data">
+                            <h3 class="card__name">Sara Mit</h3>
+                            <p class="card__description">
+                                Passionate about development and design,
+                                I carry out projects at the request of users.
+                            </p>
+
+                            <a href="#" class="card__button">View More</a>
+                        </div>
+                    </article>
+
+                    <article class="card__article swiper-slide">
+                        <div class="card__image">
+                            <img src="assets/img/Untitled-4.png" alt="image" class="card__img">
+                            <div class="card__shadow"></div>
+                        </div>
+
+                        <div class="card__data">
+                            <h3 class="card__name">Jenny Wert</h3>
+                            <p class="card__description">
+                                Passionate about development and design,
+                                I carry out projects at the request of users.
+                            </p>
+
+                            <a href="#" class="card__button">View More</a>
+                        </div>
+                    </article>
+
+                    <article class="card__article swiper-slide">
+                        <div class="card__image">
+                            <img src="assets/img/Untitled-5.png" alt="image" class="card__img">
+                            <div class="card__shadow"></div>
+                        </div>
+
+                        <div class="card__data">
+                            <h3 class="card__name">Lexa Kin</h3>
+                            <p class="card__description">
+                                Passionate about development and design,
+                                I carry out projects at the request of users.
+                            </p>
+
+                            <a href="#" class="card__button">View More</a>
+                        </div>
+                    </article>
+                </div>
             </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next">
+                <i class="ri-arrow-right-s-line"></i>
+            </div>
+
+            <div class="swiper-button-prev">
+                <i class="ri-arrow-left-s-line"></i>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
-    </nav>
-    <div class="container top-alumni-container">
-        <h2 class="text-center my-4">Top Alumni</h2>
-        <div class="row">
-            <!-- Alumni 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://media.licdn.com/dms/image/D5603AQFL3jBk3xdWyw/profile-displayphoto-shrink_200_200/0/1685649830561?e=2147483647&v=beta&t=wefsI2g8YOkVx2y7QXm7J0DIFx-IbxoosT1F7oinscY" class="card-img-top" alt="Alumnus 1">
-                    <div class="card-body">
-                        <h5 class="card-title">V.Sadasivam</h5>
-                        <p class="card-text"><strong>Graduation Year:</strong> 1991</p>
-                        <p class="card-text"><strong>Current Position:</strong> Senior Engineer L &T</p>
-                        <p class="card-text"><strong>Achievement:</strong> Led Many Projects including Chennai - Metro</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Alumni 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://media.licdn.com/dms/image/C4D03AQFm5v7mkwubeg/profile-displayphoto-shrink_200_200/0/1654453085453?e=2147483647&v=beta&t=k0xoDfLFYaVQ3Qm3ReIdyyPG0rUwMHJLCBL9WKFJjPY" class="card-img-top" alt="Alumnus 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Aathithyan</h5>
-                        <p class="card-text"><strong>Graduation Year:</strong> 2011</p>
-                        <p class="card-text"><strong>Current Position:</strong> CEO OF COOKD</p>
-                        <p class="card-text"><strong>Achievement:</strong> Developed Hero Talkies OTT platform</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Alumni 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Alumnus 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Dr. Priya Menon</h5>
-                        <p class="card-text"><strong>Graduation Year:</strong> 2008</p>
-                        <p class="card-text"><strong>Current Position:</strong> Director of Research at XYZ University</p>
-                        <p class="card-text"><strong>Achievement:</strong> Pioneered research in renewable energy technologies</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Alumni 4 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Alumnus 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Rajesh Patel</h5>
-                        <p class="card-text"><strong>Graduation Year:</strong> 2010</p>
-                        <p class="card-text"><strong>Current Position:</strong> Founder of FinTech Solutions</p>
-                        <p class="card-text"><strong>Achievement:</strong> Revolutionized the financial services industry with blockchain technology</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Alumni 5 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Alumnus 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Dr. Sneha Reddy</h5>
-                        <p class="card-text"><strong>Graduation Year:</strong> 2012</p>
-                        <p class="card-text"><strong>Current Position:</strong> Chief Scientist at BioGen</p>
-                        <p class="card-text"><strong>Achievement:</strong> Developed groundbreaking treatments for rare diseases</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Alumni 6 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Alumnus 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Karthik Iyer</h5>
-                        <p class="card-text"><strong>Graduation Year:</strong> 2011</p>
-                        <p class="card-text"><strong>Current Position:</strong> COO of Green Energy Corp.</p>
-                        <p class="card-text"><strong>Achievement:</strong> Expanded renewable energy adoption across multiple countries</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
